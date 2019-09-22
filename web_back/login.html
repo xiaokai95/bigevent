@@ -23,14 +23,33 @@
             <form class="login_form">
                 <i class="iconfont icon-user"></i>
                 <i class="iconfont icon-key"></i>
-                <input type="text" class="input_txt" placeholder="邮箱/手机号">
-                <input type="password" class="input_pass" placeholder="密码">
-                <input type="submit" class="input_sub" value="登 录">
+                <input type="text" id="userName" class="input_txt" placeholder="邮箱/手机号">
+                <input type="password" id="passWord" class="input_pass" placeholder="密码">
+                <input type="button" class="input_sub" id="login" value="登 录">
             </form>
         </div>
-
-    </div> 
-
+    </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/utils/Url.js"></script>
+    <script src="./js/utils/user.js"></script>
+    <script>
+        // 登录
+        $('#login').click(function () {
+            var userName = $('#userName').val();
+            var passWord = $('#passWord').val();
+            if (userName == '' || passWord == '') {
+                alert('输入不能为空');
+                return;
+            }
+            user.login(userName, passWord, function (res) {
+                if (res.code == 200) {
+                    window.location.href = './index.html'
+                } else {
+                    alert(res.msg);
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
