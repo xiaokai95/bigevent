@@ -17,8 +17,8 @@
     <div class="sider">
         <a href="#" class="logo"><img src="images/logo02.png" alt="logo"></a>
         <div class="user_info">
-            <img src="images/2.jpg" alt="person">
-            <span>欢迎&nbsp;&nbsp;李思思</span>
+            <img id="newImg" src="images/2.jpg" alt="person">
+            <span id="nickName">欢迎&nbsp;&nbsp;李思思</span>
             <b>管理员</b>
         </div>
         <div class="menu">
@@ -121,6 +121,13 @@
                         window.location.href = './login.html'
                     }
                 })
+            }
+        })
+        // 获取用户信息
+        user.getUser(function (res) {
+            if (res.code == 200) {
+                $('#nickName').text(res.data.nickname);
+                $('#newImg').prop('src', res.data.user_pic);
             }
         })
     </script>

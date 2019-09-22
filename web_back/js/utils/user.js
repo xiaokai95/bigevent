@@ -18,10 +18,22 @@ var user = {
             }
         })
     },
-
+    /**
+     * 用户退出
+     * @param {*} callback 回调函数
+     */
     loginOut: function (callback) {
         $.post(urlItem.loginOutUrl, function (res) {
             callback(res)
         })
-    }
+    },
+    /**
+     * 获取用户信息
+     * @param {*} callback 回调函数
+     */
+    getUser: function (callback) {
+        $.get(urlItem.getUser, function (res) {
+            callback(res);
+        })
+    },
 }
