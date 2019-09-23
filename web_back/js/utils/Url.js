@@ -1,8 +1,11 @@
-var baseUrl = 'http://localhost:8000';
+var baseUrl = "http://localhost:8000";
 var urlItem = {
-    loginUrl: baseUrl + '/admin/login',
-    loginOutUrl: baseUrl + '/admin/logout',
-    getUser: baseUrl + '/admin/getuser',
-    getArticle_countUrl: baseUrl + '/admin/article_count',
-    getComment_countUrl:baseUrl + '/admin/comment_count',
-}
+  loginUrl: baseUrl + "/admin/login",
+  loginOutUrl: baseUrl + "/admin/logout",
+  getUser: baseUrl + "/admin/getuser",
+  getArticle_countUrl: baseUrl + "/admin/article_count",
+  getComment_countUrl: baseUrl + "/admin/comment_count",
+
+  categorySearchUrl: baseUrl + "/admin/category_search",
+  categoryAddUrl: baseUrl + "/admin/category_add",
+};

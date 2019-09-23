@@ -501,14 +501,14 @@
     <script src="./js/utils/user.js"></script>
     <script>
         // 文章数量统计
-        user.getArticle_count(function (res) {
+        article.getArticle_count(function (res) {
             if (res.code == 200) {
                 $('.scolor00 em').text(res.data.all_count);
                 $('.scolor01 em').text(res.data.day_count);
             }
         })
         // 评论数量统计
-        user.getComment_count(function (res) {
+        article.getComment_count(function (res) {
             if (res.code == 200) {
                 $('.scolor02 em').text(res.data.all_count);
                 $('.scolor03 em').text(res.data.day_count);
