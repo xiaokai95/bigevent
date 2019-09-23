@@ -14,6 +14,24 @@
 </head>
 
 <body>
+    <div class="modal fade" id="logout">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">系统提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>是否退出登录</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                    <button type="button" class="btn btn-primary" id="btnout">是</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <div class="sider">
         <a href="#" class="logo"><img src="images/logo02.png" alt="logo"></a>
         <div class="user_info">
@@ -21,6 +39,7 @@
             <span id="nickName">欢迎&nbsp;&nbsp;李思思</span>
             <b>管理员</b>
         </div>
+
         <div class="menu">
             <div class="level01 active"><a href="main_count.html" target="main_frame"><i
                         class="iconfont icon-yidiandiantubiao04"></i><span>首页</span></a></div>
@@ -59,7 +78,7 @@
             scrolling="auto"></iframe>
     </div>
 
-
+    <script src="./js/bootstrap/js/bootstrap.min.js"></script>
     <script src="./js/utils/Url.js"></script>
     <script src="./js/utils/user.js"></script>
     <script>
@@ -114,14 +133,17 @@
         }
 
         // 退出
+
         $('#loginOut').click(function () {
-            if (confirm() == true) {
-                user.loginOut(function (res) {
-                    if (res.code == 200) {
-                        window.location.href = './login.html'
-                    }
-                })
-            }
+            $('#logout').modal('show')
+        })
+
+        $('#btnout').click(function () {
+            user.loginOut(function (res) {
+                if (res.code == 200) {
+                    window.location.href = './login.html'
+                }
+            })
         })
         // 获取用户信息
         user.getUser(function (res) {
