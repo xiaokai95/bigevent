@@ -36,4 +36,28 @@ var user = {
             callback(res);
         })
     },
+    /**
+     * 文章数量统计
+     * @param {*} callback 回调函数
+     */
+    getArticle_count: function (callback) {
+        $.get(urlItem.getArticle_countUrl, function (res) {
+            callback(res);
+        })
+    },
+
+    /**
+     * 评论数量统计
+     * @param {*} callback 回调函数
+     */
+    getComment_count: function (callback) {
+        $.get(urlItem.getComment_countUrl, function (res) {
+            callback(res);
+        })
+    }
+
+
+
+
+
 }
